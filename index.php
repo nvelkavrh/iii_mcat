@@ -1,7 +1,3 @@
-<?php
-//Cookie
-?>
-
 <!DOCTYPE html> 
 <html> 
 	<head> 

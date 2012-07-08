@@ -1,5 +1,6 @@
 <?php
 
+// Change $BASE_URL to match III catalog URL
 $BASE_URL = "http://library.whittier.edu/";
 $START_T_LABEL = '<div class="bibDisplayContentMain">';
 $END_T_LABEL = "<!-- close bibDisplayContent -->";

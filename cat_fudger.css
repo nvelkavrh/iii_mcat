@@ -12,13 +12,12 @@ td#coverImage{
 visibility:hidden;
 
 
-
 }
 
 td.bibInfoLabel{
 
 font-weight: bold;
-font-size: 14px;
+font-size: 12px;
 background-color: #CCCCCC;
 padding-left: 1px;
 
@@ -39,14 +38,12 @@ table#bib_items{
 
 }
 
-table#bibDisplayLayout
-{
+table#bibDisplayLayout{
 
 
 }
 
-table#bib_detail
-{
+table#bib_detail{
 
 
 }
