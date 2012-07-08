@@ -1,7 +1,3 @@
-<?php
-//Cookie
-?>
-
 <!DOCTYPE html> 
 <html> 
 	<head> 
@@ -11,7 +7,7 @@
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 	<script type="text/javascript" src=".././jquery/mobile/jquery.mobile.min.js"></script>
-	<?php include('./functions.inc.php'); ?>
+	<?php include('functions.inc.php'); ?>
 </head> 
 <body> 
 

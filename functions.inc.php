@@ -1,5 +1,6 @@
 <?php
 
+// Change $BASE_URL to match III catalog URL
 $BASE_URL = "http://library.whittier.edu/";
 $START_T_LABEL = '<div class="bibDisplayContentMain">';
 $END_T_LABEL = "<!-- close bibDisplayContent -->";
@@ -14,7 +15,7 @@ function draw_initial_results($url_in){
 	@$dom->loadHTML($data);
 	$xpath = new DOMXPath($dom);
 	
-		//Pager Stuff
+	//Pager Stuff
 	$pages = $xpath->evaluate("//td[@class='browsePager']/a");
 	
 	for ($i = 1; $i < $pages->length; $i++){
