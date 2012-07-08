@@ -1,6 +1,6 @@
 <?php
 
-$BASE_URL = "http://catalogue.library.brocku.ca/";
+$BASE_URL = "http://library.whittier.edu/";
 $START_T_LABEL = '<div class="bibDisplayContentMain">';
 $END_T_LABEL = "<!-- close bibDisplayContent -->";
 
@@ -15,7 +15,7 @@ function draw_initial_results($url_in){
 	$xpath = new DOMXPath($dom);
 	
 		//Pager Stuff
-	$pages = $xpath->evaluate("/html/body/div[@id='main']/div[@id='enclosed_page_container']//td[@class='browsePager']/a");
+	$pages = $xpath->evaluate("//td[@class='browsePager']/a");
 	
 	for ($i = 1; $i < $pages->length; $i++){
 		
@@ -40,7 +40,7 @@ function draw_initial_results($url_in){
 	echo '<ul data-role="listview"   data-dividertheme="c">';
 	
 	
-	$header_data = $xpath->evaluate("/html/body/div[@id='main']/div[@id='enclosed_page_container']//td[@class='browseHeaderData']");
+	$header_data = $xpath->evaluate("//td[@class='browseHeaderData']");
 	if ($header_data->length == 0){
 		echo "<div align='center'><br><br><h3>No Results Found!<br><br></div>";
 		return;
@@ -54,7 +54,7 @@ function draw_initial_results($url_in){
 	
 	
 	
-	$hrefs = $xpath->evaluate("/html/body/div[@id='main']/div[@id='enclosed_page_container']/div/table//span/a");
+	$hrefs = $xpath->evaluate("//div[@class='briefcitDetailMain']/h2[@class='briefcitTitle']/a");
 	
 	for ($i = 1; $i < $hrefs->length; $i++) {
 		$href = $hrefs->item($i);

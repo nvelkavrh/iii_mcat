@@ -2,7 +2,7 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>Mobile Catalogue Search</title>
+	<title>Wardman Library Mobile Catalog Search</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href=".././images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
@@ -15,7 +15,7 @@
 
 	<div data-role="header">
 	
-		<h1>Catalogue Search</h1>
+		<h1>Search Results</h1>
 	</div><!-- /header -->
 	<div data-role="content">
 
@@ -45,9 +45,9 @@
 <div data-role="footer">
 	<div data-role="navbar">
 		<ul>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="index.php">New Search</a></li>
+			<li><a href="http://library.whittier.edu">Full Catalog</a></li>
 		</ul>
 	</div><!-- /navbar -->
 </div><!-- /footer -->
