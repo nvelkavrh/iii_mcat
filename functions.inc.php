@@ -118,8 +118,10 @@ function get_query_string($searchtype,$searchstring,$sortby){
 	
 function draw_item($url_in){
 
+	//not being used yet...
+	//global $MOBILE_BASE_URL;
+	
 	global $BASE_URL;
-	global $MOBILE_BASE_URL;
 	global $START_T_LABEL;
 	global $END_T_LABEL;
 	$data = file_get_contents($BASE_URL.$url_in);
