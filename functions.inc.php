@@ -57,7 +57,7 @@ function draw_initial_results($url_in){
 	
 	$hrefs = $xpath->evaluate("//div[@class='briefcitDetailMain']/h2[@class='briefcitTitle']/a");
 	
-	for ($i = 1; $i < $hrefs->length; $i++) {
+	for ($i = 0; $i < $hrefs->length; $i++) {
 		$href = $hrefs->item($i);
 		$url = $href->getAttribute('href');
 		if (preg_match('/^\//',$url))
@@ -110,6 +110,7 @@ function get_query_string($searchtype,$searchstring,$sortby){
 		default:
 			$q_type = "X:";
 		}
+	
 	//sortby doesn't need any work
 	
 	//$query_url = "search~S0/X?SEARCH=".$q_type."(".urlencode($searchstring).")&SORT=".$sortby;
@@ -120,9 +121,6 @@ function get_query_string($searchtype,$searchstring,$sortby){
 	
 function draw_item($url_in){
 
-	//not being used yet...
-	//global $MOBILE_BASE_URL;
-	
 	global $BASE_URL;
 	global $START_T_LABEL;
 	global $END_T_LABEL;
