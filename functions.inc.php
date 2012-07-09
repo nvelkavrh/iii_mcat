@@ -2,8 +2,13 @@
 
 // Change $BASE_URL to match III catalog URL
 $BASE_URL = "http://library.whittier.edu/";
-$START_T_LABEL = '<div class="bibDisplayContentMain">';
-$END_T_LABEL = "<!-- close bibDisplayContent -->";
+
+//$START_T_LABEL = '<div class="bibDisplayContentMain">';
+//$END_T_LABEL = "<!-- close bibDisplayContent -->";
+
+$START_T_LABEL = "<!-- BEGIN INNER BIB TABLE -->";
+$END_T_LABEL = '<div class="bibDisplayContentMore bibDisplayReviews">';
+
 
 function draw_initial_results($url_in){
 	
@@ -126,12 +131,13 @@ function draw_item($url_in){
 	global $END_T_LABEL;
 	$data = file_get_contents($BASE_URL.$url_in);
 	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL,true);
-	//Render picture if there is one
+	
+	//Render cover image if there is one
 	preg_match('/\<img[^\>]*\>/',$wtable,$cov_image);
 	if($cov_image != null)
 		echo "<div id='cov_image'>".$cov_image[0]."</div>";
 	
-	//replace absolute will null
+	
 	$wtable = preg_replace('/<a href="\/.*">/','',$wtable);
 	$wtable = preg_replace('/<\/a>/','',$wtable);
 	echo "<div>";
