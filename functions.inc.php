@@ -3,11 +3,12 @@
 // Change $BASE_URL to match III catalog URL
 $BASE_URL = "http://library.whittier.edu/";
 
-//$START_T_LABEL = '<div class="bibDisplayContentMain">';
-//$END_T_LABEL = "<!-- close bibDisplayContent -->";
+$START_T_LABEL = '<div class="bibDisplayContentMain">';
+//$START_T_LABEL = '<h1 class="bibDisplayTitle">';
+$END_T_LABEL = "<!-- close bibDisplayContent -->";
 
-$START_T_LABEL = "<!-- BEGIN INNER BIB TABLE -->";
-$END_T_LABEL = '<div class="bibDisplayContentMore bibDisplayReviews">';
+
+//$END_T_LABEL = '<div class="bibDisplayContentMore bibDisplayReviews">';
 
 
 function draw_initial_results($url_in){
@@ -137,7 +138,7 @@ function draw_item($url_in){
 	if($cov_image != null)
 		echo "<div id='cov_image'>".$cov_image[0]."</div>";
 	
-	
+	//Remove links from item record display
 	$wtable = preg_replace('/<a href="\/.*">/','',$wtable);
 	$wtable = preg_replace('/<\/a>/','',$wtable);
 	echo "<div>";

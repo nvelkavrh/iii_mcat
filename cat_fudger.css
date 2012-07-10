@@ -18,7 +18,7 @@ td.bibInfoLabel{
 
 font-weight: bold;
 font-size: 12px;
-background-color: #CCCCCC;
+background-color: black;
 padding-left: 1px;
 
 
@@ -34,7 +34,7 @@ td.bibInfoData{
 
 table#bib_items{
 
-	background-color: #white;
+	background-color: white;
 
 }
 
