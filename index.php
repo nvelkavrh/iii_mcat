@@ -22,7 +22,7 @@
 	<form title="Search Books" method="GET" action="search.php">
 		<label for="searchstring"></label>
 		<input name="searchstring" size="30" maxlength="75" type="search" value="">
-		<select name="searchtype" title="Select Type">
+	<!--	<select name="searchtype" title="Select Type">
 		<option value="Keyword">Search Type</option>
         <option value="Keyword">Keyword</option>
         <option value="Title">Title</option>
@@ -34,7 +34,7 @@
         <option value="D">Relevance</option>
         <option value="AX">Title</option>
 		<option value="DX">Date</option>
-      </select>
+      </select> -->
       <input value="Search" data-theme="b" type="submit">
 	</form>
 	</div>

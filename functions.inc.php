@@ -121,7 +121,9 @@ function get_query_string($searchtype,$searchstring,$sortby){
 	
 	//$query_url = "search~S0/X?SEARCH=".$q_type."(".urlencode($searchstring).")&SORT=".$sortby;
 	
-	$query_url = "search~S0/?searchtype=".$q_type."&searcharg=".urlencode($searchstring)."&SORT=".$sortby;
+	// $query_url = "search~S0/?searchtype=".$q_type."&searcharg=".urlencode($searchstring)."&SORT=".$sortby;
+	
+	$query_url = "search~S0/?searchtype=".$q_type."&searcharg=".urlencode($searchstring); // Remove sorting options
 	return $query_url;
 }
 	
