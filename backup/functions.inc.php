@@ -99,10 +99,9 @@ function draw_initial_results($url_in){
 function get_query_string($searchtype,$searchstring,$sortby){
 
 	global $BASE_URL;
-	//$q_type = "";
+	$q_type = "";
 	$query_url = "";
 	
-	/*
 	//defaults to keyword
 	switch ($searchtype){
 		case "Title":
@@ -117,13 +116,12 @@ function get_query_string($searchtype,$searchstring,$sortby){
 		default:
 			$q_type = "X:";
 		}
-	*/
 	
 	//sortby doesn't need any work
 	
 	//$query_url = "search~S0/X?SEARCH=".$q_type."(".urlencode($searchstring).")&SORT=".$sortby;
 	
-	$query_url = "search/?searchtype=X&searcharg=".urlencode($searchstring)."&SORT=".$sortby;
+	$query_url = "search~S0/?searchtype=".$q_type."&searcharg=".urlencode($searchstring)."&SORT=".$sortby;
 	return $query_url;
 }
 	
@@ -133,7 +131,7 @@ function draw_item($url_in){
 	global $START_T_LABEL;
 	global $END_T_LABEL;
 	$data = file_get_contents($BASE_URL.$url_in);
-	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL, TRUE);
+	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL,true);
 	
 	//Render cover image if there is one
 	preg_match('/\<img[^\>]*\>/',$wtable,$cov_image);

@@ -1,44 +1,27 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>Wardman Library Mobile Catalog Home</title>
+	<title>Wardman Library Mobile Catalog Item Details</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-
 	<?php include('functions.inc.php'); ?>
 </head> 
 <body> 
 
 <div data-role="page">
 
-	<div data-role="header" data-position="inline" data-backbtn="false">
-		<h1>Wardman Library</h1>
+	<div data-role="header">
+		<a href="javascript:self.close();" data-icon="delete" class="ui-btn-left">Close</a>
+		<h1>Details</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
-	<div data-role="fieldcontain" align="center">
-	<form title="Search Books" method="GET" action="search.php">
-		<label for="searchstring"></label>
-		<input name="searchstring" size="30" maxlength="75" type="search" value="">
-		<input name="searchtype" type="hidden" value="Keyword">
-	<!--	<select name="searchtype" title="Select Type">
-		<option value="Keyword">Search Type</option>
-        <option value="Keyword">Keyword</option>
-        <option value="Title">Title</option>
-        <option value="Author">Author</option>
-        <option value="Subject">Subject</option>
-      </select>-->
-      <select name="sort">
-		<option value="D">Sort By</option>
-        <option value="D">Relevance</option>
-        <option value="AX">Title</option>
-		<option value="DX">Date</option>
-      </select>
-      <input value="Search" data-theme="b" type="submit">
-	</form>
-	</div>
+	<?php
+	$url = $_SERVER["QUERY_STRING"];
+	draw_item($url);
+	?>
 	</div><!-- /content -->
 
 <div data-role="footer">

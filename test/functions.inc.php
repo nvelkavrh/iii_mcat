@@ -133,7 +133,7 @@ function draw_item($url_in){
 	global $START_T_LABEL;
 	global $END_T_LABEL;
 	$data = file_get_contents($BASE_URL.$url_in);
-	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL, TRUE);
+	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL,true);
 	
 	//Render cover image if there is one
 	preg_match('/\<img[^\>]*\>/',$wtable,$cov_image);

@@ -1,46 +1,45 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>Wardman Library Mobile Catalog Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wardman Library Mobile Catalog Search</title>
+	<link rel="shortcut icon" href=".././images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-
 	<?php include('functions.inc.php'); ?>
 </head> 
-<body> 
-
+<body>
 <div data-role="page">
 
-	<div data-role="header" data-position="inline" data-backbtn="false">
-		<h1>Wardman Library</h1>
+	<div data-role="header">
+	
+		<h1>Search Results</h1>
 	</div><!-- /header -->
-
 	<div data-role="content">
-	<div data-role="fieldcontain" align="center">
-	<form title="Search Books" method="GET" action="search.php">
-		<label for="searchstring"></label>
-		<input name="searchstring" size="30" maxlength="75" type="search" value="">
-		<input name="searchtype" type="hidden" value="Keyword">
-	<!--	<select name="searchtype" title="Select Type">
-		<option value="Keyword">Search Type</option>
-        <option value="Keyword">Keyword</option>
-        <option value="Title">Title</option>
-        <option value="Author">Author</option>
-        <option value="Subject">Subject</option>
-      </select>-->
-      <select name="sort">
-		<option value="D">Sort By</option>
-        <option value="D">Relevance</option>
-        <option value="AX">Title</option>
-		<option value="DX">Date</option>
-      </select>
-      <input value="Search" data-theme="b" type="submit">
-	</form>
-	</div>
-	</div><!-- /content -->
 
+	
+    <?php
+	
+		if (!isset($_GET["link"])
+			header('Location: index.php');
+	
+		//if (isset($_GET["searchtype"]))
+	//		$searchtype = $_GET["searchtype"];
+		if (isset($_GET["searchstring"]))
+			$searchstring = $_GET["searchstring"];
+		if (isset($_GET["sort"]))
+			$sortby = $_GET["sort"]; 
+	?>
+	<?php
+			//first time through there will be no link
+			if(isset($_GET["link"])){
+				draw_initial_results(urlencode($_GET["link"]));
+			}
+			else
+				draw_initial_results(get_query_string(urlencode($searchstring),$sortby),$searchstring,$sortby);
+
+		?>	  
+	</div>
 <div data-role="footer">
 	<div data-role="navbar">
 		<ul>
@@ -65,6 +64,7 @@
 */
 </script>
 </div><!-- /page -->
+<?php echo $data; ?>
 
-</body>
+  </body>
 </html>

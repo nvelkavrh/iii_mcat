@@ -22,14 +22,17 @@
 	<form title="Search Books" method="GET" action="search.php">
 		<label for="searchstring"></label>
 		<input name="searchstring" size="30" maxlength="75" type="search" value="">
-		<input name="searchtype" type="hidden" value="Keyword">
-	<!--	<select name="searchtype" title="Select Type">
+		<!--
+		
+		<select name="searchtype" title="Select Type">
 		<option value="Keyword">Search Type</option>
         <option value="Keyword">Keyword</option>
-        <option value="Title">Title</option>
+		<option value="Title">Title</option>
         <option value="Author">Author</option>
-        <option value="Subject">Subject</option>
-      </select>-->
+        <option value="Subject">Subject</option> 
+		
+      </select>
+	  -->
       <select name="sort">
 		<option value="D">Sort By</option>
         <option value="D">Relevance</option>
