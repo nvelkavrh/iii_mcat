@@ -3,10 +3,10 @@
 // Change $BASE_URL to match III catalog URL
 $BASE_URL = "http://library.whittier.edu/";
 
-$START_T_LABEL = '<div class="bibDisplayContentMain">';
-//$START_T_LABEL = '<h1 class="bibDisplayTitle">';
-$END_T_LABEL = "<!-- close bibDisplayContent -->";
-
+//$START_T_LABEL = '<div class="bibDisplayContentMain">';
+$START_T_LABEL = '<td valign="top" width="20%"  class="bibInfoLabel">Author</td>';
+//$END_T_LABEL = "<!-- close bibDisplayContent -->";
+$END_T_LABEL = "<!--endMobile -->";
 
 //$END_T_LABEL = '<div class="bibDisplayContentMore bibDisplayReviews">';
 
@@ -132,9 +132,10 @@ function draw_item($url_in){
 	global $BASE_URL;
 	global $START_T_LABEL;
 	global $END_T_LABEL;
+	global $wtable;
 	$data = file_get_contents($BASE_URL.$url_in);
 	$wtable = stristr(stristr($data,$START_T_LABEL),$END_T_LABEL, TRUE);
-	
+
 	//Render cover image if there is one
 	preg_match('/\<img[^\>]*\>/',$wtable,$cov_image);
 	if($cov_image != null)
