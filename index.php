@@ -14,10 +14,6 @@
 		<!-- protocol-relative URL, served from jQuery CDN -->
 		<link rel="stylesheet" href="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 		<link rel="stylesheet" href="./meta/m.css" />
-		<!-- icons for various iOS devices  -->
-		<link rel="apple-touch-icon" sizes="114x114" href="./icons/4thgen-iphone114.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="./icons/ipad72.png" />
-		<link rel="apple-touch-icon" href="./icons/older-iphones57.png" />
 		<!-- served from Google CDN instead of jQuery b/c more liked to be cached in visitor's browser -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<!-- override default page transition (fade) - must run this script before jQuerty Mobile loads -->
